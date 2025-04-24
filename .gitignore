@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+.env
+dist/
+build/
+npm-debug.log*
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+
+# Docker
+*.tar
+*.pid
+
+# VS Code
+.vscode/
+
+# Python (если вдруг)
+__pycache__/
+*.pyc
