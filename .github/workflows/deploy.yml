@@ -18,10 +18,10 @@ jobs:
 
       - name: Build and Push Backend Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-backend:v0.0.1 ./backend
-          docker push ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-backend:v0.0.1
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-backend:v0.0.2 ./backend
+          docker push ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-backend:v0.0.2
 
       - name: Build and Push Frontend Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-frontend:v0.0.1 ./frontend
-          docker push ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-frontend:v0.0.1
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-frontend:v0.0.2 ./frontend
+          docker push ${{ secrets.DOCKER_USERNAME }}/devops-dashboard-frontend:v0.0.2
