@@ -24,8 +24,8 @@ Containerization:
 
 This project uses the following Docker images:
 
-- ruslanbaltabaev/devops-dashboard-backend:v0.0.2
-- ruslanbaltabaev/devops-dashboard-frontend:v0.0.2
+- ruslanbaltabaev/devops-dashboard-backend:latest
+- ruslanbaltabaev/devops-dashboard-frontend:latest
 
 Each service has its own Dockerfile and is configured to be published to DockerHub via GitHub Actions.
 
@@ -49,13 +49,13 @@ How to Deploy:
 
 1. Build Docker images:
 
-docker build -t ruslanbaltabaev/devops-dashboard-backend:v0.0.2 ./backend
-docker build -t ruslanbaltabaev/devops-dashboard-frontend:v0.0.2 ./frontend
+docker build -t ruslanbaltabaev/devops-dashboard-backend:latest ./backend
+docker build -t ruslanbaltabaev/devops-dashboard-frontend:latest ./frontend
 
 2. Push images to DockerHub:
 
-docker push ruslanbaltabaev/devops-dashboard-backend:v0.0.2
-docker push ruslanbaltabaev/devops-dashboard-frontend:v0.0.2
+docker push ruslanbaltabaev/devops-dashboard-backend:latest
+docker push ruslanbaltabaev/devops-dashboard-frontend:latest
 
 3. Deploy to Kubernetes:
 
