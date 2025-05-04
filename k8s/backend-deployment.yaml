@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ruslanbaltabaev/devops-dashboard-backend:v0.0.2
+          image: ruslanbaltabaev/devops-dashboard-backend:latest
           ports:
             - containerPort: 8000
