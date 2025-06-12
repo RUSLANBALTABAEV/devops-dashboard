@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { 
   Container, Typography, Card, CardContent, Grid, Button, 
   Table, TableBody, TableCell, TableContainer, TableHead, 
@@ -16,26 +15,12 @@ function App() {
   const [memory, setMemory] = useState(0);
 
   useEffect(() => {
-    const fetchMetrics = async () => {
-      try {
-        const res = await axios.get("http://localhost:8000/metrics");
-        const data = res.data.split("\n");
-        const cpuLine = data.find(line => line.includes("cpu_usage"));
-        const memoryLine = data.find(line => line.includes("memory_usage"));
+    // Эмулируем получение метрик
+    const interval = setInterval(() => {
+      setCpu(Math.random() * 100);
+      setMemory(Math.random() * 100);
+    }, 5000);
 
-        if (cpuLine) {
-          setCpu(parseFloat(cpuLine.split(" ")[1]));
-        }
-        if (memoryLine) {
-          setMemory(parseFloat(memoryLine.split(" ")[1]));
-        }
-      } catch (err) {
-        console.error("Ошибка при получении метрик:", err);
-      }
-    };
-
-    fetchMetrics();
-    const interval = setInterval(fetchMetrics, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -69,8 +54,8 @@ function App() {
           <Card>
             <CardContent>
               <Typography variant="h5">Системные метрики</Typography>
-              <Typography>CPU: {cpu}%</Typography>
-              <Typography>Память: {memory}%</Typography>
+              <Typography>CPU: {cpu.toFixed(2)}%</Typography>
+              <Typography>Память: {memory.toFixed(2)}%</Typography>
             </CardContent>
           </Card>
         </Grid>
