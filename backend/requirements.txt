@@ -3,3 +3,4 @@ uvicorn
 prometheus_client
 psutil
 pydantic
+pytest
