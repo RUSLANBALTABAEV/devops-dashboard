@@ -1,5 +1,6 @@
 # --- Python ---
 backend/__pycache__/
+backend/tests/__pycache__/
 *.py[cod]
 *.pyo
 *.pyc
