@@ -34,7 +34,9 @@ jobs:
       - name: Run backend tests
         run: |
           cd backend
-          pytest --cov=. --cov-report=xml
+          # Добавляем текущую директорию в PYTHONPATH
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest tests/ --cov=. --cov-report=xml -v
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
