@@ -1,6 +1,14 @@
-from fastapi.testclient import TestClient
-from backend.main import app
+import sys
+import os
+import pytest
 
+# Add parent directory to path for import
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from fastapi.testclient import TestClient
+from main import app
+
+# Create test client - первый аргумент позиционный!
 client = TestClient(app)
 
 def test_read_root():
@@ -19,3 +27,7 @@ def test_system_metrics():
     data = response.json()
     assert "cpu_percent" in data
     assert "memory_total" in data
+    assert "memory_percent" in data
+    assert "disk_total" in data
+    assert "disk_used" in data
+    assert "timestamp" in data
